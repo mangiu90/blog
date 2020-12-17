@@ -36,4 +36,14 @@ class Post extends Model
     {
         return $query->where('status', self::BORRADOR);
     }
+
+    public function scopePublicado($query)
+    {
+        return $query->where('status', self::PUBLICADO);
+    }
+
+    public function scopeNoEste($query, $id)
+    {
+        return $query->where('id', '!=', $id);
+    }
 }
