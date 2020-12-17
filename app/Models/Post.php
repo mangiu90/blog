@@ -9,6 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
+    public const BORRADOR = 1;
+    public const PUBLICADO = 2;
+
     public function user()
     {
         return $this->belongsTo(Post::class);
@@ -27,5 +30,10 @@ class Post extends Model
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function scopeBorrador($query)
+    {
+        return $query->where('status', self::BORRADOR);
     }
 }
