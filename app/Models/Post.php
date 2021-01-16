@@ -12,6 +12,12 @@ class Post extends Model
     public const BORRADOR = 1;
     public const PUBLICADO = 2;
 
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+
     public function user()
     {
         return $this->belongsTo(Post::class);

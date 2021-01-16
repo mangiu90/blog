@@ -11,6 +11,8 @@
     <div class="card-body">
         {!! Form::open(['route' => 'admin.posts.store', 'autocomplete' => 'off']) !!}
 
+        {!! Form::hidden('user_id', auth()->user()->id) !!}
+
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!}
             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del post']) !!}
@@ -22,8 +24,7 @@
 
         <div class="form-group">
             {!! Form::label('slug', 'Slug') !!}
-            {!! Form::text('slug', null, ['class' => 'form-control disabled', 'placeholder' => 'Ingrese el slug del
-            post', 'readonly']) !!}
+            {!! Form::text('slug', null, ['class' => 'form-control disabled', 'placeholder' => 'Ingrese el slug del post', 'readonly']) !!}
 
             @error('slug')
             <span class="text-danger">{{ $message }}</span>
@@ -48,7 +49,8 @@
             </label>
             @endforeach
 
-            @error('tag_id')
+            @error('tags')
+            <br>
             <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
@@ -66,6 +68,7 @@
             </label>
 
             @error('status')
+            <br>
             <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
