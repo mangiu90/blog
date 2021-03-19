@@ -242,16 +242,18 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
+            'text'        => 'Dashboard',
             'route'       => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can'         => 'admin.home',
         ],
         [
             'text'        => 'Usuarios',
             'route'       => 'admin.users.index',
             'icon'        => 'fas fa-users fa-fw',
+            'can'         => 'admin.users.index',
         ],
-        ['header' => 'ADMINISTRADOR'],
+        //['header' => 'ADMINISTRADOR'],
         [
             'text'   => 'Categorias',
             'route'  => 'admin.categories.index',
@@ -259,6 +261,7 @@ return [
             'active' => [
                 'admin/categories*'
             ],
+            'can'   => 'admin.categories.index',
         ],
         [
             'text' => 'Etiquetas',
@@ -267,15 +270,18 @@ return [
             'active' => [
                 'admin/tags*'
             ],
+            'can'   => 'admin.tags.index',
         ],
         ['header' => 'Opciones de Blog'],
         [
             'text'       => 'Listado de Posts',
             'route'        => 'admin.posts.index',
+            'can'   => 'admin.posts.index',
         ],
         [
             'text'       => 'Crear Post',
             'route'        => 'admin.posts.create',
+            'can'   => 'admin.posts.create',
         ],
     ],
 
