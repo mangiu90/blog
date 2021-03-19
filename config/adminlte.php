@@ -257,7 +257,7 @@ return [
             'text'        => 'Lista de Roles',
             'route'       => 'admin.roles.index',
             'icon'        => 'fas fa-users-cog fa-fw',
-            //'can'         => 'admin.users.index',
+            'can'         => 'admin.roles.index',
         ],
         //['header' => 'ADMINISTRADOR'],
         [

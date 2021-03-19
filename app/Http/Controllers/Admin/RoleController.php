@@ -9,6 +9,12 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.roles.index')->only('index');
+        $this->middleware('can:admin.posts.edit')->only('create', 'store', 'edit', 'update', 'destroy');
+    }
+
     public function index()
     {
         $roles = Role::all();
@@ -34,11 +40,6 @@ class RoleController extends Controller
         $role->syncPermissions($request->permissions);
 
         return redirect()->route('admin.roles.edit', $role)->with('info', 'El rol se creo con éxito');
-    }
-
-    public function show(Role $role)
-    {
-        return view('admin.roles.show', compact('role'));
     }
 
     public function edit(Role $role)
