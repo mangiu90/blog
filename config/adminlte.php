@@ -243,7 +243,7 @@ return [
         ],
         [
             'text'        => 'pages',
-            'route'       => 'admin.index',
+            'route'       => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'ADMINISTRADOR'],
