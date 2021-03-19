@@ -17,7 +17,7 @@ class UsersIndex extends Component
         $this->resetPage();
     }
 
-    protected $pagnationTheme = "bootstrap";
+    protected $paginationTheme = 'bootstrap';
 
 
     public function render()
