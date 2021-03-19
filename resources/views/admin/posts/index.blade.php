@@ -3,8 +3,8 @@
 @section('title', 'Coders Free')
 
 @section('content_header')
-<h1>Listado de Posts</h1>
 <a class="btn btn-secondary btn-sm float-right" href="{{ route('admin.posts.create') }}">Nuevo post</a>
+<h1>Listado de Posts</h1>
 @stop
 
 @section('content')
